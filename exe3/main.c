@@ -21,12 +21,8 @@ void i2c_task(void *p) {
     gpio_pull_up(I2C_SDA_GPIO);
     gpio_pull_up(I2C_SCL_GPIO);
 
-    uint8_t buffer[6];
-
-    // read whoami
-    uint8_t reg_address = 0xD0;
-    i2c_write_blocking(i2c_default, 0x76, &reg_address, 1, true); // true to keep master control of bus
-    i2c_read_blocking(i2c_default, 0x76, buffer, 1, false);
+    // TODO
+    // read id chip BMP280
     printf("BMP280 ID: 0x%X \n", buffer[0]);
 
     while (1) {

@@ -14,5 +14,3 @@ add_subdirectory(freertos)
 add_subdirectory(exe1)
 add_subdirectory(exe2)
 add_subdirectory(exe3)
-
-
