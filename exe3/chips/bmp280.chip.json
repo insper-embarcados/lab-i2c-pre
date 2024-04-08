@@ -1,0 +1,26 @@
+{
+  "name": "BMP280",
+  "author": "Uri Shaked",
+  "pins": [
+    "VCC",
+    "GND",
+    "TEST",
+    "SCL",
+    "SDA",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "controls": [
+    {
+      "id": "lux",
+      "label": "LUX",
+      "type": "range",
+      "min": 0,
+      "max": 2000,
+      "step": 1
+    }
+  ]
+}

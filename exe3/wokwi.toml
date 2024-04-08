@@ -1,0 +1,12 @@
+[wokwi]
+version = 1
+firmware = "../build/exe3/exe3.uf2"
+elf = "../build/exe3/exe3.elf"
+
+[[chip]]
+name = 'mpu6050' 
+binary = 'chips/mpu6050.chip.wasm'
+
+[[chip]]
+name = 'bmp280'  # To use the chip in diagram.json, add a part with "chip-inverter" type.
+binary = 'chips/bmp280.chip.wasm'

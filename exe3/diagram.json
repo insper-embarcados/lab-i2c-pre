@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "author": "Rafael Corsi",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": -22.45,
+      "left": -111.65,
+      "attrs": {
+        "builder": "pico-sdk"
+      }
+    },
+    {
+      "type": "chip-mpu6050",
+      "id": "chip1",
+      "top": 77.82,
+      "left": 43.2,
+      "attrs": {}
+    },
+    {
+      "type": "chip-bmp280",
+      "id": "chip2",
+      "top": 154.62,
+      "left": 43.2,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [
+      "pico:GP0",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "pico:GP1",
+      "$serialMonitor:TX",
+      "",
+      []
+    ],
+    [
+      "pico:GP21",
+      "chip1:SCL",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "pico:GP20",
+      "chip1:SDA",
+      "violet",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "chip1:VCC",
+      "pico:3V3",
+      "red",
+      [
+        "h-28.8",
+        "v-57.6"
+      ]
+    ],
+    [
+      "pico:GND.7",
+      "chip1:GND",
+      "black",
+      [
+        "h38.71",
+        "v38.4"
+      ]
+    ],
+    [
+      "pico:3V3",
+      "chip2:VCC",
+      "red",
+      [
+        "h57.91",
+        "v134.4"
+      ]
+    ],
+    [
+      "chip2:GND",
+      "pico:GND.7",
+      "black",
+      [
+        "h-48",
+        "v-115.2"
+      ]
+    ],
+    [
+      "chip1:SCL",
+      "chip2:SCL",
+      "green",
+      [
+        "h-57.6",
+        "v67.2"
+      ]
+    ],
+    [
+      "chip2:SDA",
+      "pico:GP20",
+      "violet",
+      [
+        "h-67.2",
+        "v-76.8"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}

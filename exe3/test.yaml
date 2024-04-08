@@ -1,0 +1,6 @@
+name: exe1
+author: Rafael Corsi
+version: 1
+
+steps:
+  - wait-serial: 'BMP280 ID: 0x58'
