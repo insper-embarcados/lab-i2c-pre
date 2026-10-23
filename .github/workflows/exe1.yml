@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'exe1/main.c'
+      - 'exe1/**'
 
 jobs:
   build-and-wokwi:

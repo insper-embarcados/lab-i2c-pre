@@ -1,6 +1,6 @@
-add_executable(exe3
+add_executable(exe4
         main.c
 )
 
-target_link_libraries(exe3 pico_stdlib hardware_i2c freertos)
-pico_add_extra_outputs(exe3)
+target_link_libraries(exe4 pico_stdlib hardware_i2c freertos)
+pico_add_extra_outputs(exe4)
