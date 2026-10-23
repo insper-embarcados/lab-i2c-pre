@@ -21,17 +21,15 @@ void i2c_task(void *p) {
     gpio_pull_up(I2C_SDA_GPIO);
     gpio_pull_up(I2C_SCL_GPIO);
 
-    uint8_t buffer[6];
-
-    // read whoami
-    uint8_t reg_address = 0x75;
-    i2c_write_blocking(i2c_default, I2C_CHIP_ADDRESS, &reg_address, 1, true); // true to keep master control of bus
-    i2c_read_blocking(i2c_default, I2C_CHIP_ADDRESS, buffer, 1, false);
-    printf("WHOAMI: 0x%X \n", buffer[0]);
+    // reset device to its default state
+    // colocando 1 no bit 7 do registrador 0x6B
+    uint8_t buf_write[2];
+    buf_write[0] = MPUREG_PWR_MGMT_1; // registrador
+    buf_write[1] = 1 << 7;            // valor
+    i2c_write_blocking(i2c_default, I2C_CHIP_ADDRESS, buf_write, 2, false);
 
     // TODO
-    // Leia o INT_ENABLE e imprima o valor
-    printf("INT_ENABLE: 0x%X \n", buffer[0]);
+    // Configure o acc para operar em 4G
 
     while (1) {
         vTaskDelay(pdMS_TO_TICKS(200));

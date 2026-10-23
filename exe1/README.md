@@ -1,7 +1,11 @@
-# exe 1
+# exe 2
 
-O código fornecido configura o registrador 0x6B:PWR_MGMT_1 colocando o valor 1 no bit 7:DEVICE_RESET, fazendo com que o dispositivo reinicie e opere com os valores de fábrica.
+![](diagram.png)
 
-![](reg.png)
+- Arquivo: `exe2/main.c`
+- Teste: Verifica pinos dos leds
 
-Agora, consultando o [manual](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf), acesse o ACCEL_CONFIG e configure o acelerômetro para operar no range de 4G.
+O exemplo fornecido configura o PWM no pino do LED R para operar em 80% de duty cycle, configure o pino do LED G para operar com 20% de Duty Cycle.
+
+**A diferença na intensidade do LED não é vísivel no wokwi, mas vai ser no mundo real!**
+

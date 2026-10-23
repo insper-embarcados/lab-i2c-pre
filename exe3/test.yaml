@@ -3,4 +3,4 @@ author: Rafael Corsi
 version: 1
 
 steps:
-  - wait-serial: 'BMP280 ID: 0x58'
+  - wait-serial: 'INT_ENABLE: 0xA5'

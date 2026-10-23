@@ -20,11 +20,14 @@
       "attrs": {}
     },
     {
-      "type": "chip-bmp280",
-      "id": "chip2",
-      "top": 154.62,
-      "left": 43.2,
-      "attrs": {}
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -13.2,
+      "left": 71.4,
+      "attrs": {
+        "color": "red",
+        "flip": ""
+      }
     }
   ],
   "connections": [
@@ -51,7 +54,7 @@
     [
       "pico:GP20",
       "chip1:SDA",
-      "violet",
+      "green",
       [
         "h0"
       ]
@@ -75,39 +78,19 @@
       ]
     ],
     [
-      "pico:3V3",
-      "chip2:VCC",
-      "red",
-      [
-        "h57.91",
-        "v134.4"
-      ]
-    ],
-    [
-      "chip2:GND",
       "pico:GND.7",
+      "led1:C",
       "black",
       [
-        "h-48",
-        "v-115.2"
+        "h0"
       ]
     ],
     [
-      "chip1:SCL",
-      "chip2:SCL",
+      "chip1:TEST",
+      "led1:A",
       "green",
       [
-        "h-57.6",
-        "v67.2"
-      ]
-    ],
-    [
-      "chip2:SDA",
-      "pico:GP20",
-      "violet",
-      [
-        "h-67.2",
-        "v-76.8"
+        "h0"
       ]
     ]
   ],

@@ -35,7 +35,6 @@ void chip_init() {
     pin_mode(pin_test, OUTPUT_LOW);
 
     mpu6050_register[MPUREG_WHOAMI] = 0x34;
-    mpu6050_register[MPUREG_INT_ENABLE] = 0xA5;
 
     const i2c_config_t i2c_config = {
         .user_data = chip,

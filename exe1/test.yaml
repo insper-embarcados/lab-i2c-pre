@@ -3,8 +3,17 @@ author: Rafael Corsi
 version: 1
 
 steps:
-  - delay: 10ms 
-  - wait-pin:
-      part-id: led1
+  - delay: 300ms
+
+  - wait-pin-change:
+      part-id: ledr
       pin: A
-      value: 1
+  - wait-pin-change:
+      part-id: ledg
+      pin: A
+  - wait-pin-change:
+      part-id: ledr
+      pin: A
+  - wait-pin-change:
+      part-id: ledg
+      pin: A

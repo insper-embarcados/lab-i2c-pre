@@ -4,53 +4,112 @@
   "editor": "wokwi",
   "parts": [
     {
-      "type": "board-pi-pico",
+      "type": "board-pi-pico-w",
       "id": "pico",
-      "top": -3.25,
-      "left": 3.55,
-      "attrs": { "builder": "pico-sdk" }
-    },
-    { "type": "wokwi-gnd", "id": "gnd2", "top": 192, "left": -87, "attrs": {} },
-    {
-      "type": "wokwi-led",
-      "id": "led1",
-      "top": 92.4,
-      "left": -82.6,
-      "attrs": { "color": "yellow" }
+      "top": -22.45,
+      "left": -111.65,
+      "attrs": {
+        "builder": "pico-sdk"
+      }
     },
     {
-      "type": "wokwi-led",
-      "id": "led2",
-      "top": 140.4,
-      "left": -82.6,
-      "attrs": { "color": "blue" }
+      "type": "chip-mpu6050",
+      "id": "chip1",
+      "top": 77.82,
+      "left": 43.2,
+      "attrs": {}
     },
     {
-      "type": "wokwi-pushbutton",
-      "id": "btn1",
-      "top": 83,
-      "left": 134.4,
-      "attrs": { "color": "yellow", "xray": "1", "bounce": "0" }
-    },
-    {
-      "type": "wokwi-pushbutton",
-      "id": "btn2",
-      "top": 140.6,
-      "left": 134.4,
-      "attrs": { "color": "blue", "xray": "1", "bounce": "0" }
+      "type": "chip-bmp280",
+      "id": "chip2",
+      "top": 154.62,
+      "left": 43.2,
+      "attrs": {}
     }
   ],
   "connections": [
-    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
-    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
-    [ "pico:GP10", "led1:A", "green", [ "h0" ] ],
-    [ "pico:GP14", "led2:A", "green", [ "h0" ] ],
-    [ "gnd2:GND", "led2:C", "black", [ "v0" ] ],
-    [ "gnd2:GND", "led1:C", "black", [ "v0" ] ],
-    [ "pico:GP26", "btn1:1.l", "green", [ "h0" ] ],
-    [ "pico:GP19", "btn2:1.l", "green", [ "h0" ] ],
-    [ "pico:GND.7", "btn1:2.r", "black", [ "h134.71", "v38.4" ] ],
-    [ "btn1:2.r", "btn2:2.r", "black", [ "h9.8", "v57.8" ] ]
+    [
+      "pico:GP0",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "pico:GP1",
+      "$serialMonitor:TX",
+      "",
+      []
+    ],
+    [
+      "pico:GP21",
+      "chip1:SCL",
+      "green",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "pico:GP20",
+      "chip1:SDA",
+      "violet",
+      [
+        "h0"
+      ]
+    ],
+    [
+      "chip1:VCC",
+      "pico:3V3",
+      "red",
+      [
+        "h-28.8",
+        "v-57.6"
+      ]
+    ],
+    [
+      "pico:GND.7",
+      "chip1:GND",
+      "black",
+      [
+        "h38.71",
+        "v38.4"
+      ]
+    ],
+    [
+      "pico:3V3",
+      "chip2:VCC",
+      "red",
+      [
+        "h57.91",
+        "v134.4"
+      ]
+    ],
+    [
+      "chip2:GND",
+      "pico:GND.7",
+      "black",
+      [
+        "h-48",
+        "v-115.2"
+      ]
+    ],
+    [
+      "chip1:SCL",
+      "chip2:SCL",
+      "green",
+      [
+        "h-57.6",
+        "v67.2"
+      ]
+    ],
+    [
+      "chip2:SDA",
+      "pico:GP20",
+      "violet",
+      [
+        "h-67.2",
+        "v-76.8"
+      ]
+    ]
   ],
   "dependencies": {}
 }

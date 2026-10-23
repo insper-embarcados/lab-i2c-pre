@@ -1,8 +1,4 @@
 [wokwi]
 version = 1
-firmware = "../build/exe1/exe1.uf2"
-elf = "../build/exe1/exe1.elf"
-
-[[chip]]
-name = 'mpu6050' 
-binary = 'chips/mpu6050.chip.wasm'
+firmware = "../build/exe2/exe2.uf2"
+elf = "../build/exe2/exe2.elf"
