@@ -7,7 +7,6 @@
 #include <stdio.h>
 #include "hardware/pwm.h"
 
-
 const int PWM_0_PIN = 4;
 
 void led_task(void *p) {
