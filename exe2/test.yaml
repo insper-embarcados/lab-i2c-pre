@@ -1,0 +1,10 @@
+name: exe1
+author: Rafael Corsi
+version: 1
+
+steps:
+  - delay: 10ms 
+  - wait-pin:
+      part-id: led1
+      pin: A
+      value: 1

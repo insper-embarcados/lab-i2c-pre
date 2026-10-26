@@ -1,0 +1,16 @@
+{
+  "name": "mpu6050",
+  "author": "Rafael",
+  "pins": [
+    "VCC",
+    "GND",
+    "TEST",
+    "SCL",
+    "SDA",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ]
+}
