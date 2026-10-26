@@ -9,7 +9,6 @@
 
 const int PWM_0_PIN = 4;
 
-
 void led_task(void *p) {
     gpio_set_function(PWM_0_PIN, GPIO_FUNC_PWM);
     uint slice_num = pwm_gpio_to_slice_num(PWM_0_PIN);
