@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: insper-embarcados/pico-build@v4
-      - uses: insper-embarcados/actions-wokwi-test@v3
+      - uses: insper-embarcados/actions-wokwi-test@main
         timeout-minutes: 5
         with:
           token: ${{ secrets.WOKWI_CLI_TOKEN }}
@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: insper-embarcados/actions-embedded-check@v1
+      - uses: insper-embarcados/actions-embedded-check@main
         with:
           c_file: exe5/main.c
           rtos: true

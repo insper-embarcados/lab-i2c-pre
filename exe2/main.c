@@ -30,6 +30,7 @@ void i2c_task(void *p) {
 
     // TODO
     // Configure o acc para operar em 4G
+    // 
 
     while (1) {
         vTaskDelay(pdMS_TO_TICKS(200));
