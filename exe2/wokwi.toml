@@ -1,7 +1,7 @@
 [wokwi]
 version = 1
-firmware = "../build/exe1/exe2.uf2"
-elf = "../build/exe1/exe2.elf"
+firmware = "../build/exe2/exe2.uf2"
+elf = "../build/exe2/exe2.elf"
 
 [[chip]]
 name = 'mpu6050' 
